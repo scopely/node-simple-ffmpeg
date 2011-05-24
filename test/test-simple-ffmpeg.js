@@ -70,18 +70,66 @@ exports['test many parameters'] = function(test) {
     test.done();
 }
 
+exports['test exec required'] = function(test) {
+    test.throws(function() {
+        var ffmpeg = new SimpleFfmpeg()
+        .withFrameRate(1)
+        .withVideoBitRate(800)
+        .withInputFile('examples/videos/input1.mp4')
+        .exec(function(code, stdout, stderr) {
+            console.log(code);
+            console.log(stdout);
+            console.log(stderr);
+        });
+    })
+    test.done();
+}
+
 exports['test exec'] = function(test) {
     var ffmpeg = new SimpleFfmpeg()
     .withFrameRate(1)
     .withVideoBitRate(800)
-    .withInputFile('input1.png')
-    .withOutputFile('output1.png')
+    .withInputFile('examples/videos/input1.mp4')
+    .withOutputFile('examples/videos/output1.flv')
     .exec(function(code, stdout, stderr) {
         console.log(code);
         console.log(stdout);
         console.log(stderr);
     });
-    //var args = ffmpeg.getArgs();
-    //test.equal(args, '-r 1 -b 800 -i input1.png output1.png', 'many parameters');
+    test.done();
+}
+
+exports['test exec2'] = function(test) {
+    var ffmpeg = new SimpleFfmpeg()
+    .withFrameRate(1)
+    .withVideoBitRate(800)
+    .withInputFile('examples/images/%01d.png')
+    .withOutputFile('examples/videos/output2.flv')
+    .exec(function(code, stdout, stderr) {
+        console.log(code);
+        console.log(stdout);
+        console.log(stderr);
+    });
+    test.done();
+}
+
+exports['test exec3'] = function(test) {
+    var ffmpeg = new SimpleFfmpeg()
+    .withFrameRate(1)
+    .withVideoBitRate(800)
+    .withInputFile('examples/images/1.png')
+    .withInputFile('examples/images/2.png')
+    .withInputFile('examples/images/3.png')
+    .withInputFile('examples/images/4.png')
+    .withInputFile('examples/images/5.png')
+    .withInputFile('examples/images/6.png')
+    .withInputFile('examples/images/7.png')
+    .withInputFile('examples/images/8.png')
+    .withOutputFile('examples/videos/output3.flv')
+    .exec(function(code, stdout, stderr) {
+        console.log(code);
+        console.log(stdout);
+        console.log(stderr);
+    });
     test.done();
 }
