@@ -5,8 +5,8 @@ var async          = require('../support/async/index.js'),
 var ffmpeg = new SimpleFfmpeg()
     .withFrameRate(1)
     .withVideoBitRate(800)
-    .withInputFile('input1.png')
-    .withOutputFile('output1.png')
+    .withInputFile('input1.mp4')
+    .withOutputFile('output1.flv')
     .exec(function(code, stdout, stderr) {
         console.log(code);
         console.log(stdout);
