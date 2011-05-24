@@ -61,10 +61,12 @@ exports['test many parameters'] = function(test) {
     .withFrameRate(1)
     .withVideoBitRate(800)
     .withInputFile('input1.png')
+    .withFormat('flv')
+    .overwriteOutputFile()
     .withOutputFile('output1.png');
 
     var args = ffmpeg.getArgs();
-    test.equal(args, '-r 1 -b 800 -i input1.png output1.png', 'many parameters');
+    test.equal(args, '-r 1 -b 800 -i input1.png -f flv -y output1.png', 'many parameters');
     test.done();
 }
 
@@ -74,8 +76,11 @@ exports['test exec'] = function(test) {
     .withVideoBitRate(800)
     .withInputFile('input1.png')
     .withOutputFile('output1.png')
-    .exec();
-
+    .exec(function(code, stdout, stderr) {
+        console.log(code);
+        console.log(stdout);
+        console.log(stderr);
+    });
     //var args = ffmpeg.getArgs();
     //test.equal(args, '-r 1 -b 800 -i input1.png output1.png', 'many parameters');
     test.done();
