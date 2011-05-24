@@ -1,0 +1,14 @@
+{
+  "name": "simple-ffmpeg",
+  "version": "0.1.1",
+  "description": "A simple api wrapper around the command line ffmpeg",
+  "keywords": [ "ffmpeg" ],
+  "author": "Viphak Lay <me@viphak.com>",
+  "bugs": {
+      "mail": "me@viphak.com",
+      "web": "http://github.com/viphak/node-simple-ffmpeg/issues"
+  },
+  "repository": "git://github.com/viphak/node-simple-ffmpeg.git",
+  "engines" : { "node" : ">=0.4.0" },
+  "main": "./lib/simple-ffmpeg"
+}
