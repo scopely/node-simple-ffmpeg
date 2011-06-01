@@ -5,7 +5,7 @@
   "keywords": [ "ffmpeg" ],
   "author": "Scopely <opensource@scopely.com>",
   "bugs": {
-      "mail": "nodejs@scopely.com",
+      "mail": "opensource@scopely.com",
       "web": "http://github.com/scopely/node-simple-ffmpeg/issues"
   },
   "repository": "git://github.com/scopely/node-simple-ffmpeg.git",
